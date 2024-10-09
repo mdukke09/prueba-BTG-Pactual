@@ -1,0 +1,52 @@
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+npm install react-router-dom@latest
+npm install @types/react-router-dom
+
+
+python -m venv venv
+source venv/bin/activate  # En Windows usa `venv\Scripts\activate`
+pip install fastapi uvicorn pymongo pydantic motor
+echo "fastapi\nuvicorn\npymongo\npydantic" > requirements.txt
+
+mkdir schemas
+mkdir routes
+mkdir services
+touch app/models/user.py app/models/fund.py app/models/transaction.py
+touch app/schemas/user.py app/schemas/fund.py app/schemas/transaction.py
+touch app/routes/user.py app/routes/fund.py app/routes/transaction.py
+touch app/services/notification.py app/main.py Dockerfile cloudformation.yaml
+
+
+
+
+
+
+Paso a Paso para Ejecutar la Solución
+
+1. Clonar el repositorio:
+
+git clone <repository-url>
+cd <repository-directory>
+
+2. Configurar el Backend:
+
+cd backend
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+
+3. Configurar el Frontend:
+
+cd frontend
+npm install
+npm start
+
+4. Despliegue con CloudFormation:
+
+Crear un archivo cloudformation.yaml con la configuración necesaria.
+
+Ejecutar el despliegue:
+aws cloudformation create-stack --stack-name my-stack --template-body file://cloudformation.yaml

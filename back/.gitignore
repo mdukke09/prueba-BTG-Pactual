@@ -1,0 +1,4 @@
+# .gitignore en la carpeta back
+venv/
+__pycache__/
+*.pyc
